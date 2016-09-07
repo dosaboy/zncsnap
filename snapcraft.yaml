@@ -1,0 +1,25 @@
+name: znc
+version: "1"
+summary: advanced modular IRC bouncer
+description:  znc is an IRC proxy. It runs as a daemon and connects to IRC server,
+ then allows you to connect from a workstation and work as the user that
+ is logged in to the IRC server. After you disconnect, it maintains the
+ connection to the server. It acts like any normal IRC server, so you can
+ use any IRC client to connect to it.
+ .
+ Some of its features include support for multiple users, multiple clients,
+ and multiple IRC servers; playback buffers to catch up with what happened
+ while you were detached, SSL encryption, DCC proxying, and a plugin
+ interface with many plugins supporting other features.
+confinement: strict
+
+apps:
+  znc:
+    command: znc
+
+parts:
+  znc-src:
+    plugin: autotools 
+    source: https://launchpad.net/ubuntu/+archive/primary/+files/znc_1.6.3.orig.tar.gz
+
+
